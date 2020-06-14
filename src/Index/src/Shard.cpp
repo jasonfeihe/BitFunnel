@@ -146,7 +146,7 @@ namespace BitFunnel
         {
             StreamUtilities::ReadBytes(input, buffer, m_sliceBufferSize);
         }
-        catch (std::exception e)
+        catch (std::exception& e)
         {
 //            LogB(Logging::Error, "LoadSliceBuffer", "Error reading slice buffer data from stream");
             m_sliceBufferAllocator.Release(buffer);

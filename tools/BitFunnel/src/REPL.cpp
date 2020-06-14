@@ -115,17 +115,17 @@ namespace BitFunnel
                    scriptFile);
                 returnCode = 0;
             }
-            catch (RecoverableError e)
+            catch (RecoverableError& e)
             {
                 output << "Error (RecoverableError): " << e.what() << std::endl;
                 Advice(output);
             }
-            catch (FatalError e)
+            catch (FatalError& e)
             {
                 output << "Error (FatalError): " << e.what() << std::endl;
                 Advice(output);
             }
-            catch (Logging::CheckException e)
+            catch (Logging::CheckException& e)
             {
                 output
                     << "Error (CheckException): "
@@ -133,7 +133,7 @@ namespace BitFunnel
                     << std::endl;
                 Advice(output);
             }
-            catch (std::runtime_error e)
+            catch (std::runtime_error& e)
             {
                 output << "Runtime exception: " << e.what() << std::endl;
                 Advice(output);
@@ -281,7 +281,7 @@ namespace BitFunnel
                     }
                 }
             }
-            catch (RecoverableError e)
+            catch (RecoverableError& e)
             {
                 output << "Error (RecoverableError): " << e.what() << std::endl;
                 if (environment.GetFailOnException())
@@ -289,7 +289,7 @@ namespace BitFunnel
                     throw e;
                 }
             }
-            catch (Logging::CheckException e)
+            catch (Logging::CheckException& e)
             {
                 // TODO: We probably shouldn't catch CheckException here since
                 // we don't know whether the situation is safely recoverable.

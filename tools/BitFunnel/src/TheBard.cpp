@@ -198,7 +198,7 @@ int main(int argc, const char *const *argv)
         {
             BitFunnel::Run(verbose.IsActivated(), file.IsActivated());
         }
-        catch (BitFunnel::RecoverableError e)
+        catch (BitFunnel::RecoverableError& e)
         {
             std::cout << "Error: " << e.what() << std::endl;
         }

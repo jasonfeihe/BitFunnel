@@ -89,7 +89,7 @@ namespace BitFunnel
 
                 returnCode = 0;
             }
-            catch (RecoverableError e)
+            catch (RecoverableError& e)
             {
                 output << "Error: " << e.what() << std::endl;
             }

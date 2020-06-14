@@ -103,7 +103,7 @@ namespace BitFunnel
                     std::cout << std::endl << std::endl;
                 }
             }
-            catch (RecoverableError e)
+            catch (RecoverableError& e)
             {
                 std::cout
                     << "Error: "

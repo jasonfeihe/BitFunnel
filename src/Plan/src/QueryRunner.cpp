@@ -260,7 +260,7 @@ namespace BitFunnel
                                    m_resultsBuffer);
             }
         }
-        catch (RecoverableError e)
+        catch (RecoverableError& e)
         {
             // Continue processing other queries, even though the current query failed.
             // The instrumentation for this query will show that it didn't succeed.

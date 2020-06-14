@@ -131,7 +131,7 @@ namespace BitFunnel
             }
             else
             {
-                CHECK_NE(*GetEnvironment().GetOutputDir().c_str(), '\0')
+                CHECK_NE(*GetEnvironment().GetOutputDir().c_str(), 0)
                     << "Output directory not set. "
                     << "Please use the 'cd' command to set an "
                     << "output directory";
@@ -169,11 +169,11 @@ namespace BitFunnel
                 statistics.Print(*outSummary);
             }
         }
-        catch (RecoverableError e)
+        catch (RecoverableError& e)
         {
             output << "Error: " << e.what() << std::endl;
         }
-        catch (Logging::CheckException e)
+        catch (Logging::CheckException& e)
         {
             output << "Error: " << e.GetMessage().c_str() << std::endl;
         }

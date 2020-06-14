@@ -143,7 +143,7 @@ namespace BitFunnel
             // TODO: Create with factory?
             termToText = Factories::CreateTermToText(*fileManager.TermToText().OpenForRead());
         }
-        catch (RecoverableError e)
+        catch (RecoverableError& e)
         {
             termToText = Factories::CreateTermToText();
         }

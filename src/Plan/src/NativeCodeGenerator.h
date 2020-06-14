@@ -53,8 +53,12 @@ namespace BitFunnel
         return static_cast<int32_t>(reinterpret_cast<uint64_t>(&((static_cast<OBJECT*>(nullptr))->*field)));
     }
 
+#if 0
 #define OFFSET_OF(object, field) \
 static_cast<int32_t>(reinterpret_cast<uint64_t>(&((static_cast<object*>(nullptr))->field)))
+#else
+#define OFFSET_OF(object, field) offsetof(object, field)
+#endif
 
 
     //*************************************************************************

@@ -169,11 +169,11 @@ namespace BitFunnel
 
                 returnCode = 0;
             }
-            catch (std::exception e)
+            catch (std::exception& e)
             {
                 output << "Error: " << e.what() << std::endl;
             }
-            catch (Logging::CheckException e)
+            catch (Logging::CheckException& e)
             {
                 output << "Error: " << e.GetMessage().c_str() << std::endl;
             }
